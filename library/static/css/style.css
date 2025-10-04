@@ -1,0 +1,31 @@
+body {
+    background-color: #3E0703;
+    color:#F5DAA7;
+    margin:150px 50px;
+}
+h1, h2 {
+    text-align: center;
+}
+table {
+    background-color: #A3485A;
+    margin: 20px auto 50px auto; /* space top/bottom + center horizontally */
+    border-collapse: collapse;
+    width: 80%; /* optional: make the table a bit narrower */
+}
+th {
+    background-color: #842A3B;
+    color: #F5DAA7;
+    text-align: center;
+}
+th, td {
+    border: 1px solid #333;
+    padding: 20px 30px;
+}
+ul {
+    text-align: center;
+    padding: 0;
+    list-style-type: none;
+}
+ul li{
+    text-decoration: none;
+}

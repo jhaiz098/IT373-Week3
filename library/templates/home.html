@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Books</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main>
+    <h1>All Books</h1>
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Categories</th>
+                <th>Published</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author.name }}</td>
+                    <td>
+                        {% for category in book.category.all %}
+                            {{ category.name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            No Categories
+                        {% endfor %}
+                    </td>
+                    <td>{{ book.published }}</td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="4">No books found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>All Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.name }}</li>
+        {% empty %}
+            <li>No categories found.</li>
+        {% endfor %}
+    </ul>
+    </main>
+</body>
+</html>
